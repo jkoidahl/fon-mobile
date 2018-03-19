@@ -1,21 +1,20 @@
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put, select } from 'redux-saga/effects';
 
 // 1. upon init schedule
 
 import { LOAD_SCHEDULE, LOAD_SCHEDULE_ERROR, LOAD_SCHEDULE_RESULT } from '../actions/schedule';
 
-
 const getLatestSchedule = () => {}; //fetch('../data/data.json');
 
 function* fetchLatestSchedule(action) {
     console.log('todo update the schedule', action);
+    yield;
     try {
-        console.log('blah');
+        const bleh = yield select( state => state.schedule.events);
         // const response = yield call(getLatestSchedule);
         // const result = yield response.json();
         // console.log(yield response);
         // console.log(yield result);
-        console.log('hello');
 
         // if (result.error) {
         //     yield put( {type: LOAD_SCHEDULE_ERROR, error: result.error} );
@@ -23,8 +22,7 @@ function* fetchLatestSchedule(action) {
         //     yield put( {type: LOAD_SCHEDULE_RESULT, result } );
         // }
 
-        const events = { 'result': {'events': [ {'name': 'intro'}]}};
-        put( {type: LOAD_SCHEDULE_RESULT, events});
+        put( {type: LOAD_SCHEDULE_RESULT, bleh});
         
     } catch (e) {
         yield put( {type: LOAD_SCHEDULE_ERROR, error: e.message} );
