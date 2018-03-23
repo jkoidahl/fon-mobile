@@ -24,23 +24,14 @@ const MapStack = new StackNavigator({
 { headerMode: 'none'}
 );
 
-const HomeStack = new StackNavigator({
-    Home: {
-        screen: Home,
-        navigationOptions: { header: () => null}
-    },
-    Maps: {
-        screen: MapStack,
-    },
-}, 
-{ headerMode: 'none'}
-);
-
-
 export default StackNavigator(
     {
         Home: {
-            screen: HomeStack, 
+            screen: Home,
+            navigationOptions: { header: () => null}
+        },
+        Maps: {
+            screen: MapStack,
         },
         Schedule: {
             screen: Schedule,      
@@ -55,7 +46,7 @@ export default StackNavigator(
             }
         },
     },{
-        //headerMode: 'float',
+        headerMode: 'screen',
     }
 
 );
