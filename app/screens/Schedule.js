@@ -11,6 +11,7 @@ class Schedule extends Component {
         filterSchedule: PropTypes.func,
         loadSchedule: PropTypes.func,
         updateFavorite: PropTypes.func,
+        favoriteEvents: PropTypes.array,
     }
 
     componentWillMount() {
@@ -25,6 +26,12 @@ class Schedule extends Component {
 
     updateFavorite = (e, id) => {
         this.props.updateFavorite(id);
+        console.log('props.favoriteEvents', this.props.favoriteEvents);
+    }
+
+    isFavorite = (id) => {
+        console.log('pros favs: ', this.props.favoriteEvents); 
+        return this.props.favoriteEvents && this.props.favoriteEvents.indexOf(id) !== -1;
     }
 
     renderHeader = () => {
@@ -41,7 +48,7 @@ class Schedule extends Component {
                     <ListItem
                     title={`${item.title}`}
                     subtitle={item.location}
-                    rightIcon={{name: ((item.isFavorite) ? "favorite" :"favorite-border")}}
+                    rightIcon={{name: ( this.isFavorite(item.id) ? "favorite" :"favorite-border")}}
                     onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
                     />
                 } 
@@ -55,9 +62,14 @@ class Schedule extends Component {
 
 const mapStateToProps = (state) => {
     const events = state.schedule.events;
-    return {
-        events,
+    const favoriteEvents = state.favoriteEvents;
+    let result = {
+        favoriteEvents: favoriteEvents,
+        events: events,
     };
+    console.log('state. favorties:', state.favoriteEvents );
+    console.log('result', JSON.stringify(result));
+    return result;
 };
 
 export default connect(mapStateToProps, {filterSchedule, loadSchedule, updateFavorite})(Schedule);

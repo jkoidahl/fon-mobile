@@ -2,6 +2,7 @@ import { LOAD_SCHEDULE, LOAD_SCHEDULE_ERROR, LOAD_SCHEDULE_RESULT, FILTER_SCHEDU
 
 const initialState = {
     isLoading: true,
+    favoriteFoods: [],
     events: 
         [ 
             {'id':'1', 'title': 'Australian Digeridoo', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
@@ -14,6 +15,7 @@ const initialState = {
             {'id':'8', 'title': 'Georgian Horse Riding', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
         ]
     ,
+    favoriteEvents: [],
     error: null,
 };
 
@@ -28,16 +30,16 @@ const filterEvents = (events, searchText) => {
 
 const updateObjectInArray = (array, action) => {
     console.log(action);
-    return array.map( (item) => {
-        if(item.id !== action.id) {
-            return item;
-        }
-        
-        return {
-            ...item,
-            isFavorite : item.isFavorite ? false : true
-        };    
-    });
+    console.log(array);
+    const index = array.indexOf(action.id);
+    if (index !== -1) {
+        console.log('removing id at index', index);
+        array.splice(index);
+    } else {
+        array.push(action.id);
+    }
+    console.log('pushed id',array);
+    return array;
 }
 
 const reducer = ( state = initialState , action ) => {
@@ -49,10 +51,8 @@ const reducer = ( state = initialState , action ) => {
             return { ...state,  
                 events : filterEvents(state.events, action.text)
             }
-        case LOAD_SCHEDULE: 
-            return {...state, events: initialState.events }
         case UPDATE_FAVORITE:
-            return {...state, events: updateObjectInArray(state.events, action) }
+            return {...state, favoriteEvents: updateObjectInArray(state.favoriteEvents, action) }
         default: 
             return state;
     }
