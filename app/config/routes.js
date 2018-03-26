@@ -4,6 +4,7 @@ import Home from '../screens/Home';
 import Schedule from '../screens/Schedule';
 import Food from '../screens/Food';
 import Maps from '../screens/Maps';
+import MapFull from '../screens/MapFull';
 import GoogleMap from '../screens/GoogleMap';
 
 
@@ -20,6 +21,9 @@ const MapStack = new StackNavigator({
             headerTitle: 'Directions',
         }
     },
+    Map: {
+        screen: MapFull,
+    }
 }, 
 { headerMode: 'none'}
 );

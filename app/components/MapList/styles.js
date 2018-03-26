@@ -3,12 +3,12 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 export default EStyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
+        paddingTop: 0,
+    },
+    containerContent: {
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        paddingBottom: 160,
-        paddingTop: 0,
     },
     text: {
         color: '$primaryTextColor',
@@ -21,6 +21,7 @@ export default EStyleSheet.create({
         borderColor: "transparent",
         borderWidth: 0,
         borderRadius: 5,
+        marginBottom: 20,
         
     },
     buttonText: {
