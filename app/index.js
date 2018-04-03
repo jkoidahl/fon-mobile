@@ -9,6 +9,10 @@ EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
   $primaryTextColor: 'white',
   $primaryIconColor: 'white',
+  $primaryOrange: '#F46036',
+  $primaryPurple: '#372248',
+  $primaryBrown: '#564946',
+  $secondaryTextColor: '#4F6D7A',
 });
 
 

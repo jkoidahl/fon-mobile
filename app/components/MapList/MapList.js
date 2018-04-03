@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { ScrollView, Image, Text, FlatList } from 'react-native';
-import { Button } from 'react-native-elements';
-
+import TextButton from '../Button/TextButton';
 import styles from './styles';
 
 class MapList extends Component {
@@ -36,15 +35,14 @@ class MapList extends Component {
     render() {
         return(
         <ScrollView style={styles.container}>
-            <Button textStyle={styles.buttonText} buttonStyle={styles.button} text='Get Directions' onPress={this.showMap}></Button>
+            <TextButton text='Get Directions' onPress={this.showMap}></TextButton>
             <FlatList
                     data={this.state.images}
                     keyExtractor={item => item.name}
                     renderItem={({item}) => 
-                    <Button textStyle={styles.buttonText} 
-                            buttonStyle={styles.button} 
+                    <TextButton
                             text={item.name} 
-                            onPress={() => this.showMapImage(item.name, item.fileName)}></Button>
+                            onPress={() => this.showMapImage(item.name, item.fileName)}></TextButton>
                 }
             />
 

@@ -21,6 +21,9 @@ class Navigation extends Component {
     handleMapsPress = () => {
         this.props.navigation.navigate('Maps');
     }
+    handleInfoPress = () => {
+        this.props.navigation.navigate('Info');
+    }
 
     handleShopPress = () => {
         console.log('shop press');
@@ -35,7 +38,11 @@ class Navigation extends Component {
     }
 
     handleNewsPress = () => {
-        console.log('handle news press');
+        this.props.navigation.navigate('Social');
+    }
+
+    handleDonatePress = () => {
+        this.props.navigation.navigate('Donate');
     }
 
     render() {
@@ -53,8 +60,8 @@ class Navigation extends Component {
                 </View>
                 <View>
                     <NavButton text="Eat" image="md-restaurant" onPress={this.handleEatPress} />
-                    <NavButton text="Festival Info" image="md-information-circle" onPress={this.handleMapsPress} />
-                    <NavButton text="Donate" image="md-thumbs-up" onPress={this.handleEatPress} />
+                    <NavButton text="Festival Info" image="md-information-circle" onPress={this.handleInfoPress} />
+                    <NavButton text="Donate" image="md-thumbs-up" onPress={this.handleDonatePress} />
                 </View>
             </View>
         );
