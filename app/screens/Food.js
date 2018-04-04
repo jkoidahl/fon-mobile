@@ -5,28 +5,61 @@ import { List, ListItem, SearchBar } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { filterFood } from '../actions/food';
 
+const FOOD = [
+    {id: 1, name: 'African American', menu: 'af am menu'},
+    {id: 2, name: 'America Indian', menu: 'am indian menu'},
+    {id: 3, name: 'Bangladeshi', menu: 'bangladeshi menu'},
+];
+
 class Food extends Component {
 
     componentWillMount = () => {
-        this.props.filterFood();
+        // TODO implement filterFood
+        // this.props.filterFood();
     }
 
     updateSearch = (text) => {
         if (text.length > 1) {
-            console.log('props', this.props);
-            this.props.filterFood();
+        // TODO implement filterFood
+        // this.props.filterFood();
         }
     }
+
+    updateFavorite = (e, id) => {
+        // TODO implement me
+        //this.props.updateFavorite(id);
+    }
+
+    isFavorite = (id) => {
+        // TODO implement me 
+    } 
+
+    handleOnPress = (item) => {
+        console.log( 'handle on press', item );
+        this.props.navigation.navigate('FoodDetail', {item});
+    }
+    
+    renderHeader = () => {
+        return <SearchBar placeholder="Type Here..." onChangeText={this.updateSearch} lightTheme round />;
+      }
 
     render() {
         return (
         <View style={{ flex: 1 }}>
             <StatusBar translucent={false} barStyle="default" />
-            <SearchBar placeholder="Type Here..." onChangeText={this.updateSearch} lightTheme round />
-            <Text>
-                title bar has a search icon to show and hide the search bar. Wrench icon to show only favorite or all.
-                List of Ethnicities each can be favorited-> Click to show -> Detail view with description of food stuffs
-            </Text>
+            <FlatList
+              data={FOOD}
+              renderItem={({ item }) => 
+                    <ListItem
+                    title={`${item.name}`}
+                    onPress={() => this.handleOnPress(item)}
+                    rightIcon={{name: ( this.isFavorite(item.id) ? "favorite" :"favorite-border")}}
+                    onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
+                    />
+                } 
+              keyExtractor={item => item.id}
+              ListHeaderComponent={this.renderHeader}
+            />
         </View>
         );
     }

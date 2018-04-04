@@ -13,7 +13,7 @@ import Contact from '../screens/Contact';
 import Tickets from '../screens/Tickets';
 import Social from '../screens/Social';
 import Donate from '../screens/Donate';
-
+import FoodDetail from '../screens/FoodDetail';
 
 const MapStack = new StackNavigator({
     Maps: {
@@ -68,6 +68,18 @@ const InfoStack = new StackNavigator({
     }
 }, { headerMode: 'none' } );
 
+const FoodStack = new StackNavigator({
+    Food: {
+        screen: Food,
+        navigationOptions: {
+            headerTitle: 'Food'
+        }
+    },
+    FoodDetail: {
+        screen: FoodDetail,
+    }
+}, { headerMode: 'none'});
+
 export default StackNavigator(
     {
         Home: {
@@ -84,10 +96,7 @@ export default StackNavigator(
               },
         },
         Food: {
-            screen: Food,
-            navigationOptions: {
-                headerTitle: 'Food',
-            }
+            screen: FoodStack,
         },
         Info: {
             screen: InfoStack,
