@@ -26,11 +26,11 @@ class Navigation extends Component {
     }
 
     handleShopPress = () => {
-        console.log('shop press');
+        this.props.navigation.navigate('Shop');
     }
 
     handlePartnersPress = () => {
-        console.log('partner press');
+        this.props.navigation.navigate('Partners');
     }
 
     handleExplorePress = () => {

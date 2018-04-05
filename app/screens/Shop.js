@@ -5,18 +5,18 @@ import { List, ListItem, SearchBar } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { filterFood } from '../actions/food';
 
-const FOOD = [
-    {id: 1, name: 'African American', menu: `af am menu 
+const SHOPS = [
+    {id: 1, name: 'African American', menu: `af am wares 
         afiou aiudfa fdja dfaldks fjkalaf
         dafdfadf ad 
         adfadsfads fdfswe few 
          few fwe feoijgpioregp qgeg qerg qgfdojadf we 
          adfsd fwe wef we `},
-    {id: 2, name: 'America Indian', menu: 'am indian menu'},
-    {id: 3, name: 'Bangladeshi', menu: 'bangladeshi menu'},
+    {id: 2, name: 'America Indian', menu: 'am indian wares'},
+    {id: 3, name: 'Bangladeshi', menu: 'bangladeshi wares'},
 ];
 
-class Food extends Component {
+class Shop extends Component {
 
     componentWillMount = () => {
         // TODO implement filterFood
@@ -41,7 +41,7 @@ class Food extends Component {
 
     handleOnPress = (item) => {
         console.log( 'handle on press', item );
-        this.props.navigation.navigate('FoodDetail', {item});
+        this.props.navigation.navigate('ShopDetail', {item});
     }
     
     renderHeader = () => {
@@ -53,13 +53,11 @@ class Food extends Component {
         <View style={{ flex: 1 }}>
             <StatusBar translucent={false} barStyle="default" />
             <FlatList
-              data={FOOD}
+              data={SHOPS}
               renderItem={({ item }) => 
                     <ListItem
                     title={`${item.name}`}
                     onPress={() => this.handleOnPress(item)}
-                    rightIcon={{name: ( this.isFavorite(item.id) ? "favorite" :"favorite-border")}}
-                    onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
                     />
                 } 
               keyExtractor={item => item.id}
@@ -73,4 +71,4 @@ class Food extends Component {
 const mapStateToProps = (state) => {
     return state;
 };
-export default connect(mapStateToProps, {filterFood})(Food);
+export default connect(mapStateToProps)(Shop);

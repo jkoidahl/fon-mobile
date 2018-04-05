@@ -14,6 +14,10 @@ import Tickets from '../screens/Tickets';
 import Social from '../screens/Social';
 import Donate from '../screens/Donate';
 import FoodDetail from '../screens/FoodDetail';
+import Shop from '../screens/Shop';
+import ShopDetail from '../screens/ShopDetail';
+import Partners from '../screens/Partners';
+import PartnerDetail from '../screens/PartnerDetail';
 
 const MapStack = new StackNavigator({
     Maps: {
@@ -80,6 +84,31 @@ const FoodStack = new StackNavigator({
     }
 }, { headerMode: 'none'});
 
+const ShopStack = new StackNavigator({
+    Shop: {
+        screen: Shop,
+        navigationOptions: {
+            headerTitle: 'Shop'
+        }
+    },
+    ShopDetail: {
+        screen: ShopDetail,
+    }
+}, { headerMode : 'none'});
+
+const PartnerStack = new StackNavigator({
+    Partners: {
+        screen: Partners,
+        navigationOptions: {
+            headerTitle: 'Partners'
+        }
+    },
+    PartnerDetail: {
+        screen: PartnerDetail,
+    }
+}, { headerMode : 'none'});
+
+
 export default StackNavigator(
     {
         Home: {
@@ -101,6 +130,12 @@ export default StackNavigator(
         Info: {
             screen: InfoStack,
         },
+        Shop: {
+            screen: ShopStack,
+        },
+        Partners: {
+            screen: PartnerStack,
+        }, 
         Social: {
             screen: Social,
             navigationOptions: {

@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import { HeaderDetailList } from '../components/HeaderDetailList';
 import { Container } from '../components/Container';
 
-class FoodDetail extends Component {
+class ShopDetail extends Component {
     static navigationOptions = ({ navigation }) => {
         const { params } = navigation.state;
         
@@ -25,11 +25,11 @@ class FoodDetail extends Component {
                 alignItems: 'center',
               }}>
                
-               <HeaderDetailList data={[{header: 'Menu', body: item.menu}]}></HeaderDetailList>
+               <HeaderDetailList data={[{header: 'Wares', body: item.menu}]}></HeaderDetailList>
             </Container>
         );
     }
 
 }
 
-export default FoodDetail;
+export default ShopDetail;
