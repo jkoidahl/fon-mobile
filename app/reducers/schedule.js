@@ -1,21 +1,18 @@
-import { LOAD_SCHEDULE, LOAD_SCHEDULE_ERROR, LOAD_SCHEDULE_RESULT, FILTER_SCHEDULE, UPDATE_FAVORITE } from '../actions/schedule';
+import {    LOAD_SCHEDULE, 
+            LOAD_SCHEDULE_ERROR, 
+            LOAD_SCHEDULE_RESULT, 
+            FILTER_SCHEDULE, 
+            UPDATE_FAVORITE,
+            UPDATE_FILTER_DATE } from '../actions/schedule';
+import events from '../data/events';
 
 const initialState = {
     isLoading: true,
     favoriteFoods: [],
-    events: 
-        [ 
-            {'id':'1', 'title': 'Australian Digeridoo', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
-            {'id':'2', 'title': 'Belgian Chocolate Making', 'date': 'May 4th 2018','startTime':'', 'endTime': '', 'location' :'Main Stage'},
-            {'id':'3', 'title': 'Canadian Snow Shoeing','date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Cafe Stage'},
-            {'id':'4', 'title': 'Danish Baking','date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
-            {'id':'5', 'title': 'Equadorian Flutes','date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Main Stage'},
-            {'id':'6', 'title': 'Finnish Bisto', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
-            {'id':'7', 'title': 'German Dumpling Demo', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
-            {'id':'8', 'title': 'Georgian Horse Riding', 'date': 'May 4th 2018', 'startTime':'', 'endTime': '', 'location' :'Atrium Stage'},
-        ]
-    ,
+    events: events,
     favoriteEvents: [],
+    navData: { currentIndex: 0, items: [{title: 'All'}, {title:'May 3rd 2018'}, {title:'May 4th 2018'}, 
+            {title: 'May 5th 2018'}, {title: 'May 6th 2018'}] },
     error: null,
 };
 
@@ -24,8 +21,15 @@ const handleLoadScheduleResult = state => {
     return state;
 }
 
-const filterEvents = (events, searchText) => {
-    return events.filter( event => event.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
+const filterListByTitle = (list, searchText) => {
+    return list.filter( listItem => listItem.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
+}
+
+const filterListByDate = (list, date) => {
+    if (date === 'All') {
+        return list;
+    }
+    return list.filter(listItem => listItem.date.toLowerCase() === date.toLowerCase());
 }
 
 const updateObjectInArray = (array, action) => {
@@ -42,17 +46,33 @@ const updateObjectInArray = (array, action) => {
     return array;
 }
 
+const updateNavData = (data, offset) => {
+
+    return {...data, currentIndex: data.currentIndex + offset};
+}
+
+const handleFilterDate = (state, action) => {
+    let updatedIndex = state.navData.currentIndex + action.offset;
+    let filteredList = filterListByDate(events, state.navData.items[updatedIndex].title);
+    let updatedNavData = updateNavData( state.navData, action.offset);
+    return { ...state, 
+            events: filteredList,
+            navData: updatedNavData,
+        };
+}
+
 const reducer = ( state = initialState , action ) => {
     switch( action.type ) { 
         case LOAD_SCHEDULE_RESULT: 
             return handleLoadScheduleResult(result);
         case FILTER_SCHEDULE:
-            console.log('inside filter schedule reducer');
             return { ...state,  
-                events : filterEvents(state.events, action.text)
+                events : filterListByTitle(state.events, action.text)
             }
         case UPDATE_FAVORITE:
             return {...state, favoriteEvents: updateObjectInArray(state.favoriteEvents, action) }
+        case UPDATE_FILTER_DATE: 
+            return handleFilterDate(state, action);
         default: 
             return state;
     }

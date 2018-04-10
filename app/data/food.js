@@ -1,6 +1,6 @@
 export default [
     {id: 1, name: 'African American', 
-        menu: `af am menu 
+        menu: `af am menu update 
         afiou aiudfa fdja dfaldks fjkalaf
         dafdfadf ad 
         adfadsfads fdfswe few 

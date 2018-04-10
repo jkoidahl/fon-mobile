@@ -1,0 +1,10 @@
+export default ['African Warrior Bow & Raffia Costume Making',
+'American Indian Silversmith','Armenian Silk Work','Chinese Calligraphy','Colombian Fiber Wall Tapestries',
+'Ecuadorian Loom Weaving','German Porcelain Painting','Ghanaian Hair Braiding',
+    'Hmong Needlework','Indian Henna & Rangoli','Indian Traditional Painting','International Lace Making',
+    'Iraqi Caricature & Arabic Calligraphy','Italian Bocce Ball','Japanese Kimono','Khmer Angkorian Art',
+    'Mexican Textiles','Mongollian Yurt','Native American Beadwork','Norwegian Hardanger','Polish Folk Art',
+    'Russian Folk Arts & Crafts','Russian Folklore Illustration',
+'Scandinavian Viking Age Crafts','Senegalese Pottery',
+'Somali Finger Weaving','Ukrainian Egg Decorating',
+'Vietnamese Traditional Wedding Ceremony'];

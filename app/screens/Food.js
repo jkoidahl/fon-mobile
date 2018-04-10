@@ -5,16 +5,7 @@ import { List, ListItem, SearchBar } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { filterFood } from '../actions/food';
 
-const FOOD = [
-    {id: 1, name: 'African American', menu: `af am menu 
-        afiou aiudfa fdja dfaldks fjkalaf
-        dafdfadf ad 
-        adfadsfads fdfswe few 
-         few fwe feoijgpioregp qgeg qerg qgfdojadf we 
-         adfsd fwe wef we `},
-    {id: 2, name: 'America Indian', menu: 'am indian menu'},
-    {id: 3, name: 'Bangladeshi', menu: 'bangladeshi menu'},
-];
+import food from '../data/food';
 
 class Food extends Component {
 
@@ -53,7 +44,7 @@ class Food extends Component {
         <View style={{ flex: 1 }}>
             <StatusBar translucent={false} barStyle="default" />
             <FlatList
-              data={FOOD}
+              data={food}
               renderItem={({ item }) => 
                     <ListItem
                     title={`${item.name}`}

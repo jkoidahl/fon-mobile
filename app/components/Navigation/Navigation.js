@@ -34,7 +34,7 @@ class Navigation extends Component {
     }
 
     handleExplorePress = () => {
-        console.log('handle explore press');
+        this.props.navigation.navigate('Explore');
     }
 
     handleNewsPress = () => {

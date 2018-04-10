@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StatusBar, Text, View, FlatList } from 'react-native';
-import { List, ListItem, SearchBar } from 'react-native-elements';
+import { List, ListItem, SearchBar, Header } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { loadSchedule, filterSchedule, updateFavorite } from '../actions/schedule';
+import { DateFilterHeader } from '../components/DateFilterHeader';
+
+import { loadSchedule, filterSchedule, updateFavorite, updateFilterDate } from '../actions/schedule';
 
 class Schedule extends Component {
     static propTypes =  {
@@ -12,6 +14,7 @@ class Schedule extends Component {
         loadSchedule: PropTypes.func,
         updateFavorite: PropTypes.func,
         favoriteEvents: PropTypes.array,
+        navData: PropTypes.object,
     }
 
     componentWillMount() {
@@ -26,7 +29,6 @@ class Schedule extends Component {
 
     updateFavorite = (e, id) => {
         this.props.updateFavorite(id);
-        console.log('props.favoriteEvents', this.props.favoriteEvents);
     }
 
     isFavorite = (id) => {
@@ -36,18 +38,28 @@ class Schedule extends Component {
 
     renderHeader = () => {
         return <SearchBar placeholder="Type Here..." onChangeText={this.updateSearch} lightTheme round />;
-      }
+    }
+
+    onPressRightNav = () => {
+        this.props.updateFilterDate(1);
+    }
+
+    onPressLeftNav = () => {
+        this.props.updateFilterDate(-1);
+    }
 
     render() {
         return (
         <View style={{ flex: 1 }}>
             <StatusBar translucent={false} barStyle="default" />
+            <DateFilterHeader navData={this.props.navData} onPressRightNav={this.onPressRightNav} 
+                onPressLeftNav={this.onPressLeftNav}/>
             <FlatList
               data={this.props.events}
               renderItem={({ item }) => 
                     <ListItem
                     title={`${item.title}`}
-                    subtitle={item.location}
+                    subtitle={`${item.location} ${item.date}`}
                     rightIcon={{name: ( this.isFavorite(item.id) ? "favorite" :"favorite-border")}}
                     onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
                     />
@@ -62,14 +74,14 @@ class Schedule extends Component {
 
 const mapStateToProps = (state) => {
     const events = state.schedule.events;
-    const favoriteEvents = state.favoriteEvents;
+    const favoriteEvents = state.schedule.favoriteEvents;
+    const navData = state.schedule.navData;
     let result = {
         favoriteEvents: favoriteEvents,
         events: events,
+        navData: navData,
     };
-    console.log('state. favorties:', state.favoriteEvents );
-    console.log('result', JSON.stringify(result));
     return result;
 };
 
-export default connect(mapStateToProps, {filterSchedule, loadSchedule, updateFavorite})(Schedule);
+export default connect(mapStateToProps, {filterSchedule, loadSchedule, updateFavorite, updateFilterDate})(Schedule);

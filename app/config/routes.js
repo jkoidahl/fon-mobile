@@ -18,6 +18,37 @@ import Shop from '../screens/Shop';
 import ShopDetail from '../screens/ShopDetail';
 import Partners from '../screens/Partners';
 import PartnerDetail from '../screens/PartnerDetail';
+import Exhibits from '../screens/Exhibits';
+import Explore from '../screens/Explore';
+import Bazaars from '../screens/Bazaars';
+import Demos from '../screens/Demos';
+
+const ExploreStack = new StackNavigator({
+    Explore: {
+        screen: Explore,
+        navigationOptions: {
+            headerTitle: 'Explore'
+        },
+    },
+    Exhibits: {
+        screen: Exhibits,
+        navigationOptions: {
+            headerTitle: 'Exhibits'
+        }
+    },
+    Bazaars: {
+        screen: Bazaars,
+        navigationOptions: {
+            headerTitle: 'Bazaars'
+        },
+    }, 
+    Demos: {
+        screen: Demos,
+        navigationOptions: {
+            headerTitle: 'Demos'
+        }
+    }
+}, { headerMode: 'none'});
 
 const MapStack = new StackNavigator({
     Maps: {
@@ -147,6 +178,9 @@ export default StackNavigator(
             navigationOptions: {
                 headerTitle: 'Donate',
             }
+        },
+        Explore: {
+            screen: ExploreStack,
         },
     },{
         headerMode: 'screen',
