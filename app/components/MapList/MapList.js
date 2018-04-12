@@ -9,15 +9,15 @@ class MapList extends Component {
         super(props);
         this.state = {
             images: [
-                {name: 'Street Level', fileName:require('./Map/images/map2.png')},
-                {name: 'Lower Level', fileName:require('./Map/images/map2.png')},
-                {name: 'Kellogg Lobby', fileName:require('./Map/images/map2.png')},
-                {name: 'Atrium', fileName:require('./Map/images/map2.png')},
-                {name: 'International Café', fileName:require('./Map/images/map2.png')},
-                {name: 'Bazaar', fileName:require('./Map/images/map2.png')},
-                {name: 'World Stage', fileName:require('./Map/images/map2.png')},
-                {name: 'Exhibits', fileName:require('./Map/images/map2.png')},
-                {name: 'Wilkins Balcony', fileName:require('./Map/images/map2.png')},
+                {name: 'Street Level', fileName:require('./Map/images/street.jpg')},
+                {name: 'Lower Level', fileName:require('./Map/images/lower.jpg')},
+                {name: 'Kellogg Lobby', fileName:require('./Map/images/kellogg.jpg')},
+                {name: 'Atrium', fileName:require('./Map/images/atrium.jpg')},
+                {name: 'International Café', fileName:require('./Map/images/cafe.jpg')},
+                {name: 'Bazaar', fileName:require('./Map/images/market.jpg')},
+                {name: 'World Stage', fileName:require('./Map/images/world-stage.jpg')},
+                {name: 'Exhibits', fileName:require('./Map/images/exhibits.jpg')},
+                {name: 'Wilkins Balcony', fileName:require('./Map/images/wilkins.jpg')},
                 ]
         }
     }
