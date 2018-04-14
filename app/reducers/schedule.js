@@ -1,3 +1,6 @@
+
+import moment from 'moment';
+
 import {    LOAD_SCHEDULE, 
             LOAD_SCHEDULE_ERROR, 
             LOAD_SCHEDULE_RESULT, 
@@ -21,7 +24,39 @@ const handleLoadScheduleResult = state => {
     return state;
 }
 
+const sortByDate = (eventList) => {
+    return eventList.sort(
+        function (a, b) {
+            let format = "MMMM Do YYYY HH:mm";
+            let dateTimeA = getDateTime(a);
+            let dateTimeB = getDateTime(b);
+            const diff = moment(dateTimeA, format) - moment(dateTimeB, format);
+            if (diff === 0 ) {
+                var titleA = a.title.toUpperCase(); 
+                var titleB = b.title.toUpperCase(); 
+                if (titleA < titleB) {
+                    return -1;
+                }
+                if (titleA > titleB) {
+                    return 1;
+                }
+                return 0;
+            }
+            return diff;
+          }
+    )
+}
+
+const getDateTime = (event) => {
+    return event.date + ' ' + event.startTime;
+}
+
 const filterListByTitle = (list, searchText) => {
+    console.log('filter text', searchText);
+    console.log('list size', list.length);
+    if (searchText === '' ) {
+        return list;
+    }
     return list.filter( listItem => listItem.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1);
 }
 
@@ -32,18 +67,20 @@ const filterListByDate = (list, date) => {
     return list.filter(listItem => listItem.date.toLowerCase() === date.toLowerCase());
 }
 
-const updateObjectInArray = (array, action) => {
-    console.log(action);
-    console.log(array);
-    const index = array.indexOf(action.id);
-    if (index !== -1) {
-        console.log('removing id at index', index);
-        array.splice(index);
-    } else {
-        array.push(action.id);
-    }
-    console.log('pushed id',array);
-    return array;
+const updateFavoriteEvent = (events, action) => {
+    console.log('action: ' , action);
+    const updatedEvents = events.map( (event) => {
+        if(event.id !== action.id) {
+            return event;
+        }
+        
+        return {
+            ...event,
+            isFavorite : event.isFavorite ? false : true
+        };    
+    });
+    console.log('updatedEvents', updatedEvents);
+    return updatedEvents;
 }
 
 const updateNavData = (data, offset) => {
@@ -70,9 +107,11 @@ const reducer = ( state = initialState , action ) => {
                 events : filterListByTitle(state.events, action.text)
             }
         case UPDATE_FAVORITE:
-            return {...state, favoriteEvents: updateObjectInArray(state.favoriteEvents, action) }
+            return {...state, events: updateFavoriteEvent(state.events, action) }
         case UPDATE_FILTER_DATE: 
             return handleFilterDate(state, action);
+        case LOAD_SCHEDULE:
+            return { ...state, events: sortByDate(state.events)}
         default: 
             return state;
     }
