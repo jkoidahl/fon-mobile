@@ -8,10 +8,24 @@ const SECTIONS = [
     { title: 'Hours',
     contentItems: [ 
         { header: 'General Public Hours',
-          body: 'Friday, May 4, 2018 \n 4:30 p.m. – 10:00 p.m. \n Saturday, May 5, 2018 \n 10:00 a.m. – 10:00 p.m. \n Sunday, May 6, 2018 \n 10:00 a.m. – 6:00 p.m.'
+          body: 
+          `
+    Friday, May 4, 2018
+      4:30 p.m. – 10:00 p.m.
+    Saturday, May 5, 2018
+      10:00 a.m. – 10:00 p.m.
+    Sunday, May 6, 2018
+      10:00 a.m. – 6:00 p.m.`
       },
-      { header: 'Student Hours**', 
-      body:'Thursday, May 3, 2018 \n 9:00 a.m. – 3:00 p.m. \n Friday, May 4, 2018 \n 9:30 a.m. – 4:30 p.m. \n \n **STUDENT HOURS ARE NOT OPEN TO THE GENERAL PUBLIC.'
+        { header: `    
+Student Hours'`, 
+          body:`
+    Thursday, May 3, 2018
+      9:00 a.m. – 3:00 p.m.
+    Friday, May 4, 2018
+      9:30 a.m. – 4:30 p.m.
+        
+'STUDENT HOURS ARE NOT OPEN TO THE GENERAL PUBLIC.`
       }            
     ]
   }, 
