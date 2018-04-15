@@ -104,7 +104,7 @@ const reducer = ( state = initialState , action ) => {
             return handleLoadScheduleResult(result);
         case FILTER_SCHEDULE:
             return { ...state,  
-                events : filterListByTitle(state.events, action.text)
+                events : filterListByTitle(initialState.events, action.text)
             }
         case UPDATE_FAVORITE:
             return {...state, events: updateFavoriteEvent(state.events, action) }

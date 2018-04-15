@@ -13,8 +13,8 @@ class Explore extends Component {
     showExhibits = () => {
         this.props.navigation.navigate('Exhibits');
     }
-    showBazaars = () => {
-        this.props.navigation.navigate('Bazaars');
+    showActivities = () => {
+        this.props.navigation.navigate('Activities');
     }
     showDemos = () => {
         this.props.navigation.navigate('Demos');
@@ -30,8 +30,8 @@ class Explore extends Component {
                 alignItems: 'center',
               }}>
                 <TextButton text="Cultural Exhibits" onPress={this.showExhibits}></TextButton>
-                <TextButton text="Bazaars" onPress={this.showBazaars}></TextButton>
-                <TextButton text="Demos" onPress={this.showDemos}></TextButton>
+                <TextButton text="Demonstrations" onPress={this.showDemos}></TextButton>
+                <TextButton text="Activities" onPress={this.showActivities}></TextButton>
             </Container>
         );
     }

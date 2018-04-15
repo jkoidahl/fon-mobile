@@ -22,6 +22,7 @@ import Exhibits from '../screens/Exhibits';
 import Explore from '../screens/Explore';
 import Bazaars from '../screens/Bazaars';
 import Demos from '../screens/Demos';
+import Activities from '../screens/Activities'; 
 
 const ExploreStack = new StackNavigator({
     Explore: {
@@ -36,10 +37,10 @@ const ExploreStack = new StackNavigator({
             headerTitle: 'Exhibits'
         }
     },
-    Bazaars: {
-        screen: Bazaars,
+    Activities: {
+        screen: Activities,
         navigationOptions: {
-            headerTitle: 'Bazaars'
+            headerTitle: 'Activities'
         },
     }, 
     Demos: {

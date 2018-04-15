@@ -30,7 +30,7 @@ class Schedule extends Component {
     }
 
     renderHeader = () => {
-        return <SearchBar placeholder="Type Here..." onChangeText={this.updateSearch} lightTheme round />;
+        return <SearchBar placeholder="Search..." onChangeText={this.updateSearch} lightTheme round />;
     }
 
     onPressRightNav = () => {
