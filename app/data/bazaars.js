@@ -186,7 +186,7 @@ export default [
     },
     {
       "id": 72,
-      "name": "Seychellios",
+      "name": "Seychellois",
       "description": "Clothing, Puppets, Bracelets, Baskets, Jewelry   "
     },
     {

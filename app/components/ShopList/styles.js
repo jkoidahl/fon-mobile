@@ -10,6 +10,7 @@ export default EStyleSheet.create({
     },
     detail: {
         paddingLeft: 15,
+        paddingRight: 10,
         paddingTop: 10,
         paddingBottom: 15,
         marginBottom: 3,
