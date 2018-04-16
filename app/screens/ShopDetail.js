@@ -25,7 +25,7 @@ class ShopDetail extends Component {
                 alignItems: 'center',
               }}>
                
-               <HeaderDetailList data={[{header: 'Wares', body: item.menu}]}></HeaderDetailList>
+               <HeaderDetailList data={[{header: 'Description', body: item.description}]}></HeaderDetailList>
             </Container>
         );
     }

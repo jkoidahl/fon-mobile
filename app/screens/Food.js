@@ -36,7 +36,7 @@ class Food extends Component {
     }
     
     renderHeader = () => {
-        return <SearchBar placeholder="Type Here..." onChangeText={this.updateSearch} lightTheme round />;
+        return <SearchBar placeholder="Search..." onChangeText={this.updateSearch} lightTheme round />;
       }
 
     render() {
@@ -49,8 +49,6 @@ class Food extends Component {
                     <ListItem
                     title={`${item.name}`}
                     onPress={() => this.handleOnPress(item)}
-                    rightIcon={{name: ( this.isFavorite(item.id) ? "favorite" :"favorite-border")}}
-                    onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
                     />
                 } 
               keyExtractor={item => item.id}
