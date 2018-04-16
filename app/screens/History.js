@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 
 import { Container } from '../components/Container';
+import { HistoryDetail } from '../components/HistoryDetail';
 
 class History extends Component {
     render() {
@@ -12,7 +13,7 @@ class History extends Component {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-                <Text>History below</Text>
+               <HistoryDetail></HistoryDetail>
             </Container>
         );
     }
