@@ -55,6 +55,9 @@ class Schedule extends Component {
                      subtitle={`${item.date} ${item.startTime} - ${item.location}`}
                      rightIcon={{name: ( (item.isFavorite) ? "favorite" :"favorite-border")}}
                      onPressRightIcon={(e) => this.updateFavorite(e, item.id)}
+                     chevronColor="#BCBBC1"
+                     chevron={true}
+                     bottomDivider={true}
                     /> 
                 }
               keyExtractor={item => item.id}

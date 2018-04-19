@@ -49,6 +49,9 @@ class Food extends Component {
                     <ListItem
                     title={`${item.name}`}
                     onPress={() => this.handleOnPress(item)}
+                    chevronColor="#BCBBC1"
+                    chevron={true}
+                    bottomDivider={true}
                     />
                 } 
               keyExtractor={item => item.id}

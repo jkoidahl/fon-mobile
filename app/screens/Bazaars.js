@@ -15,7 +15,8 @@ class Bazaars extends Component {
               data={bazaars}
               renderItem={({ item }) => 
                     <ListItem
-                    title={`${item}`} hideChevron={true}
+                    chevronColor="#D1D1D6"
+                    chevron={true}
                     />
                 } 
               keyExtractor={item => item}
