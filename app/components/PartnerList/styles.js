@@ -5,4 +5,7 @@ export default EStyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
       },
+      avatar: {
+          resizeMode: 'contain'
+      }
 });
