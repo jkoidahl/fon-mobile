@@ -14,9 +14,10 @@ class Bazaars extends Component {
             <FlatList
               data={bazaars}
               renderItem={({ item }) => 
-                    <ListItem
-                    chevronColor="#D1D1D6"
+                <ListItem
+                    chevronColor="#BCBBC1"
                     chevron={true}
+                    bottomDivider={true}
                     />
                 } 
               keyExtractor={item => item}

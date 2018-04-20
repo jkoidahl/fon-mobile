@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StatusBar } from 'react-native';
-import { ListItem } from 'react-native-elements';
 
 import activities from '../data/activities';
 

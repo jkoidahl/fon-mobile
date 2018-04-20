@@ -16,6 +16,7 @@ class Demos extends Component {
               renderItem={({ item }) => 
                     <ListItem titleNumberOfLines={2}
                     title={`${item}`} hideChevron={true}
+                    bottomDivider={true}
                     />
                 } 
               keyExtractor={item => item}

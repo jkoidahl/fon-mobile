@@ -16,6 +16,7 @@ class Exhibits extends Component {
               renderItem={({ item }) => 
                     <ListItem
                     title={`${item}`} hideChevron={true}
+                    bottomDivider={true}
                     />
                 } 
               keyExtractor={item => item}
