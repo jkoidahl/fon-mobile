@@ -27,7 +27,7 @@ const handleLoadScheduleResult = state => {
 const sortByDate = (eventList) => {
     return eventList.sort(
         function (a, b) {
-            let format = "MMMM Do YYYY HH:mm";
+            let format = "MMMM Do YYYY hh:mm A";
             let dateTimeA = getDateTime(a);
             let dateTimeB = getDateTime(b);
             const diff = moment(dateTimeA, format) - moment(dateTimeB, format);
@@ -111,7 +111,7 @@ const reducer = ( state = initialState , action ) => {
         case UPDATE_FILTER_DATE: 
             return handleFilterDate(state, action);
         case LOAD_SCHEDULE:
-            return { ...state, events: sortByDate(state.events)}
+            return { ...state}
         default: 
             return state;
     }
