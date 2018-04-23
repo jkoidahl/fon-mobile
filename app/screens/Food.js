@@ -55,8 +55,7 @@ class Food extends Component {
                     />
                 } 
               keyExtractor={item => item.id}
-              ListHeaderComponent={this.renderHeader}
-            />
+             />
         </View>
         );
     }

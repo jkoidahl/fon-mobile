@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 
-import { HeaderDetailList } from '../components/HeaderDetailList';
+import { BulletList } from '../components/BulletList';
 import { Container } from '../components/Container';
 
 class FoodDetail extends Component {
@@ -25,7 +25,7 @@ class FoodDetail extends Component {
                 alignItems: 'center',
               }}>
                
-               <HeaderDetailList data={[{header: 'Menu', body: item.menu}]}></HeaderDetailList>
+               <BulletList headerText={'Menu'} commaDelimitedText={item.menu}></BulletList>
             </Container>
         );
     }

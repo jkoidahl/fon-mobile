@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 
-import { HeaderDetailList } from '../components/HeaderDetailList';
+import { BulletList } from '../components/BulletList';
 import { Container } from '../components/Container';
 
 class ShopDetail extends Component {
@@ -24,8 +24,7 @@ class ShopDetail extends Component {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-               
-               <HeaderDetailList data={[{header: 'Description', body: item.description}]}></HeaderDetailList>
+               <BulletList headerText={'Description'} commaDelimitedText={item.description}></BulletList>
             </Container>
         );
     }
