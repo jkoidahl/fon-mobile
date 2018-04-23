@@ -51,7 +51,7 @@ class Navigation extends Component {
                 <View>
                     <NavButton text="Schedule" image="md-calendar" onPress={this.handleSchedulePress} />
                     <NavButton text="Shop" image="md-cart" onPress={this.handleShopPress} />
-                    <NavButton text="Partners" image="md-people" onPress={this.handlePartnersPress} />
+                    <NavButton text="Sponsors" image="md-people" onPress={this.handlePartnersPress} />
                 </View>
                 <View>
                     <NavButton text="Maps" image="md-map" onPress={this.handleMapsPress} />

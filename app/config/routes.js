@@ -132,7 +132,7 @@ const PartnerStack = new StackNavigator({
     Partners: {
         screen: Partners,
         navigationOptions: {
-            headerTitle: 'Partners & Sponsors'
+            headerTitle: 'Sponsors & Partners'
         }
     },
     PartnerDetail: {
