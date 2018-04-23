@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { Button } from 'react-native-elements';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -13,11 +13,12 @@ class Social extends Component {
     }
     
     showFacebook = () => {
-        this.props.navigation.navigate('Faq');
+        Linking.openURL('https://www.facebook.com/FestivalofNationsSaintPaulMN/').catch(err => console.error('An error occurred', err));
     }
 
     showTwitter = () => {
-        this.props.navigation.navigate('History');
+        
+        Linking.openURL('https://twitter.com/mnfestofnations').catch(err => console.error('An error occurred', err));
     }
 
     showStatus = () => {
@@ -38,8 +39,6 @@ class Social extends Component {
               }}>
                 <TextButton text="Like Us On Facebook" onPress={this.showFacebook}></TextButton>
                 <TextButton text="Follow Us On Twitter" onPress={this.showTwitter}></TextButton>
-                <TextButton text="Share Status" onPress={this.showStatus}></TextButton>
-                <TextButton text="Share Photo" onPress={this.showPhoto}></TextButton>
               
             </Container>
             

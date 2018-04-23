@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image, Text, FlatList } from 'react-native';
+import { View, Image, Text, FlatList, Linking } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
+
+import { DetailLink } from '../DetailLink';
 
 import styles from './styles';
 
@@ -22,9 +24,12 @@ class HeaderDetailAccordian extends Component {
         return (
           <View style={styles.content}>
           <FlatList data={section.contentItems} renderItem={({item}) => 
+            
             <Text style={styles.contentText}>
+            
               <Text style={styles.subHeaderText}>{item.header}</Text>
               <Text>{item.body}</Text>
+              <DetailLink url={item.url} text={item.urlText} />
             </Text>}/>
           </View>
         );
