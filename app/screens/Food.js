@@ -31,7 +31,6 @@ class Food extends Component {
     } 
 
     handleOnPress = (item) => {
-        console.log( 'handle on press', item );
         this.props.navigation.navigate('FoodDetail', {item});
     }
     

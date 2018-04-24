@@ -20,7 +20,6 @@ const initialState = {
 };
 
 const handleLoadScheduleResult = state => {
-    console.log('inside handleLoadSchedule ', state);
     return state;
 }
 
@@ -52,8 +51,6 @@ const getDateTime = (event) => {
 }
 
 const filterListByTitle = (list, searchText) => {
-    console.log('filter text', searchText);
-    console.log('list size', list.length);
     if (searchText === '' ) {
         return list;
     }
@@ -68,7 +65,6 @@ const filterListByDate = (list, date) => {
 }
 
 const updateFavoriteEvent = (events, action) => {
-    console.log('action: ' , action);
     const updatedEvents = events.map( (event) => {
         if(event.id !== action.id) {
             return event;
@@ -79,7 +75,6 @@ const updateFavoriteEvent = (events, action) => {
             isFavorite : event.isFavorite ? false : true
         };    
     });
-    console.log('updatedEvents', updatedEvents);
     return updatedEvents;
 }
 

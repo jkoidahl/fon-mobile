@@ -7,14 +7,11 @@ import { LOAD_SCHEDULE, LOAD_SCHEDULE_ERROR, LOAD_SCHEDULE_RESULT } from '../act
 const getLatestSchedule = () => {}; //fetch('../data/data.json');
 
 function* fetchLatestSchedule(action) {
-    console.log('todo update the schedule', action);
     yield;
     try {
         const bleh = yield select( state => state.schedule.events);
         // const response = yield call(getLatestSchedule);
         // const result = yield response.json();
-        // console.log(yield response);
-        // console.log(yield result);
 
         // if (result.error) {
         //     yield put( {type: LOAD_SCHEDULE_ERROR, error: result.error} );

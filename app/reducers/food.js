@@ -8,7 +8,6 @@ const initialState = {
 const reducer = ( state = initialState , action ) => {
     switch( action.type ) { 
         case FILTER_FOOD:
-            console.log('inside filter food reducer');
             return { ...state}
         default: 
             return state;

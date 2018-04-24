@@ -1121,7 +1121,7 @@ export default [
     },
     {
       "id": 318,
-      "title": "African Musician",
+      "title": "Jane SaiJai, Khmer Surin Singer",
       "date": "May 4th 2018",
       "startTime": "7:30 PM",
       "endTime": "8:00 PM",
@@ -1193,10 +1193,10 @@ export default [
     },
     {
       "id": 319,
-      "title": "Serbian Musicians",
+      "title": "Headlining Group: Cre.Ture Crewe K-pop Dance",
       "date": "May 4th 2018",
       "startTime": "8:00 PM",
-      "endTime": "8:30 PM",
+      "endTime": "9:00 PM",
       "location": "Cafe Stage"
     },
     {
@@ -1206,14 +1206,6 @@ export default [
       "startTime": "8:30 PM",
       "endTime": "9:00 PM",
       "location": "Atrium Stage"
-    },
-    {
-      "id": 320,
-      "title": "Irish Musicians",
-      "date": "May 4th 2018",
-      "startTime": "8:30 PM",
-      "endTime": "9:00 PM",
-      "location": "Cafe Stage"
     },
     {
       "id": 244,
@@ -2217,10 +2209,10 @@ export default [
     },
     {
       "id": 343,
-      "title": "Australian / Tuvan",
+      "title": "Headlining Group: Lau Hawaiian Collective",
       "date": "May 5th 2018",
       "startTime": "8:00 PM",
-      "endTime": "8:30 PM",
+      "endTime": "9:00 PM",
       "location": "Cafe Stage"
     },
     {
@@ -2278,14 +2270,6 @@ export default [
       "startTime": "8:00 PM",
       "endTime": "9:00 PM",
       "location": "World Stage"
-    },
-    {
-      "id": 344,
-      "title": "Bohemian Musicians",
-      "date": "May 5th 2018",
-      "startTime": "8:30 PM",
-      "endTime": "9:00 PM",
-      "location": "Cafe Stage"
     },
     {
       "id": 267,
