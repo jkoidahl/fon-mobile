@@ -1,5 +1,7 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "sdkVersion": "25.0.0",
+    "expo.name": "Festival Of Nations MN",
+    "expo.icon": "./app/components/Logo/images/fon2018logo.png"
   }
 }
