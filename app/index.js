@@ -6,13 +6,29 @@ import Navigator from './config/routes';
 import store from './config/store';
 
 EStyleSheet.build({
-  $primaryBlue: '#4F6D7A',
+  // $primaryBlue: '#4F6D7A',
+  // $primaryTextColor: 'white',
+  // $primaryIconColor: 'white',
+  // $primaryOrange: '#F46036',
+  // $primaryPurple: '#372248',
+  // $secondaryTextColor: '#4F6D7A',
+
+  $primaryBlue: '#337ab7',
   $primaryTextColor: 'white',
   $primaryIconColor: 'white',
-  $primaryOrange: '#F46036',
-  $primaryPurple: '#372248',
-  $primaryBrown: '#564946',
-  $secondaryTextColor: '#4F6D7A',
+  $primaryOrange: '#fa824c',
+  $primaryPurple: '#a2d729',
+  $secondaryTextColor: '#2b2c28',
+
+  // $primaryBlue: '#337ab7',
+  // $primaryTextColor: 'white',
+  // $primaryIconColor: 'white',
+  // $primaryOrange: '#fb4d3d',
+  // $primaryPurple: '#03cea4',
+  // $secondaryTextColor: '#337ab7',
+
+
+
 });
 
 

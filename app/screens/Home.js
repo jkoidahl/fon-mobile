@@ -16,7 +16,7 @@ class Home extends Component {
         return (
         <Container>
             <StatusBar translucent={false} barStyle="light-content" />
-            <Logo />
+            <Logo/>
             <Navigation navigation={this.props.navigation} />
         </Container>
         );

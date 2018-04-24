@@ -13,7 +13,7 @@ export default EStyleSheet.create({
         paddingTop: 10,
         paddingBottom: 15,
         marginBottom: 3,
-        color: '$primaryPurple',
+        color: '$secondaryTextColor',
         backgroundColor: 'white',
         fontSize: 16,
     },

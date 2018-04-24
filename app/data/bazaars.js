@@ -12,7 +12,7 @@ export default [
     {
       "id": 74,
       "name": "Angolan",
-      "description": "AFRICAN ARTS AND CRAFTS, AFRICAN ARTS AND CRAFTS, AFRICAN ARTS AND CRAFTS, AFRICAN ARTS AND CRAFTS, AFRICAN ARTS AND CRAFTS"
+      "description": "AFRICAN ARTS AND CRAFTS"
     },
     {
       "id": 9,
@@ -52,7 +52,7 @@ export default [
     {
       "id": 61,
       "name": "Ecuadorian",
-      "description": "bags, crystal like roses, nylon roses, ceramic items, toys, hats, jewelry, ponchos, flutes, maracas, scarfs, ornaments for house, drums, masks, kids outfits,"
+      "description": "bags, crystal like roses, nylon roses, ceramic items, toys, hats, jewelry, ponchos, flutes, maracas, scarfs, ornaments for house, drums, masks, kids outfits"
     },
     {
       "id": 49,
@@ -92,12 +92,12 @@ export default [
     {
       "id": 42,
       "name": "Hmong",
-      "description": "purses, coin purses, Stuffed dogs, stuffed cats, stuffed mermaids, Stuffed monkeys, stuffed dragons, stuffed snakes, stuffed dolphins, stuffed crabs, stuffed lizards, stuffed parrots, stuffed penguins, Hmong Story Cloths, stuffed turtles, stuffed frogs, Animal keychains, "
+      "description": "purses, coin purses, Stuffed dogs, stuffed cats, stuffed mermaids, Stuffed monkeys, stuffed dragons, stuffed snakes, stuffed dolphins, stuffed crabs, stuffed lizards, stuffed parrots, stuffed penguins, Hmong Story Cloths, stuffed turtles, stuffed frogs, Animal keychains"
     },
     {
       "id": 84,
       "name": "Honduran",
-      "description": "Whole Bean Coffee, Hot Cups of Coffee, Iced Coffee, General Merchandising, na, na, na, na, na, na, na, na, na, na, na, na, na, na"
+      "description": "Whole Bean Coffee, Hot Cups of Coffee, Iced Coffee, General Merchandising"
     },
     {
       "id": 79,
@@ -167,7 +167,7 @@ export default [
     {
       "id": 6,
       "name": "Polish",
-      "description": "Boxes, Ornaments made in Poland, Jewlery, Pottery, Wooden Shields, Plastic Helmets, Kitchen Wares, Pillows, Scarves and Shawls, T-Shirts and onesies, Purses, Gift Boxes, Novelty Items, Books, CD's, Greeting Cards, Chess Sets, "
+      "description": "Boxes, Ornaments made in Poland, Jewlery, Pottery, Wooden Shields, Plastic Helmets, Kitchen Wares, Pillows, Scarves and Shawls, T-Shirts and onesies, Purses, Gift Boxes, Novelty Items, Books, CD's, Greeting Cards, Chess Sets"
     },
     {
       "id": 22,

@@ -8,7 +8,7 @@ import styles from './styles';
 const NavButton = ({ text, onPress, image }) => (
     <TouchableOpacity onPress={onPress}>
         <View style={styles.container}>
-            <Ionicons style={styles.icon} name={image} size={96} />
+            <Ionicons style={styles.icon} name={image} size={72} />
             <Text style={styles.text}>{text}</Text>
         </View>
     </TouchableOpacity>
