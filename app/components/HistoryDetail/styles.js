@@ -1,15 +1,22 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
+import { Dimensions } from 'react-native';
 
+const imageWidth = Dimensions.get('window').width * .85;
 
 export default EStyleSheet.create({
+
+    contentContainer: {
+        flexGrow: 1, 
+        alignItems:'center'
+    },
     container: {        
-        flex : 1, 
-        flexDirection: 'row', 
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingLeft: 15,
+        paddingRight: 15,
     },
     image: {
-        width:350,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: imageWidth,
         resizeMode: 'contain'
     },
     header :{
@@ -20,10 +27,7 @@ export default EStyleSheet.create({
             padding: 5,
     },
     detail: {
-        paddingLeft: 15,
-        paddingTop: 10,
-        paddingBottom: 15,
-        marginBottom: 3,
+        padding:10,
         color: 'white',
         backgroundColor: '$primaryPurple'
     },

@@ -171,7 +171,7 @@ export default StackNavigator(
         Social: {
             screen: Social,
             navigationOptions: {
-                headerTitle: 'News/Social',
+                headerTitle: 'Social',
             }
         },
         Donate: {
