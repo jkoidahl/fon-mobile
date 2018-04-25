@@ -2,6 +2,15 @@
   "expo": {
     "sdkVersion": "25.0.0",
     "expo.name": "Festival Of Nations MN",
-    "expo.icon": "./app/components/Logo/images/fon2018logo.png"
+    "expo.icon": "./app/components/Logo/images/fon2018logo.png",
+    "description": "Festival Of Nations Minnesota 2018",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"ios": {
+			"bundleIdentifier": "com.lighthousesoftware.festivalofnations2018"
+		},
+		"android": {
+			"package": "com.lighthousesoftware.festivalofnations2018"
+		}
   }
 }
