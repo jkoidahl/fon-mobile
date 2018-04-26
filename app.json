@@ -2,7 +2,7 @@
   "expo": {
     "sdkVersion": "25.0.0",
     "name": "Festival Of Nations MN",
-    "slug": "https://exp.host/@jkoidahl/festival-of-nations-mn",
+    "slug": "festival-of-nations-mn",
     "icon": "./fon2018logo.png",
     "description": "Festival Of Nations Minnesota 2018",
 		"version": "0.9.0",
