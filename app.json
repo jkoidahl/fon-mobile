@@ -12,6 +12,9 @@
 		},
 		"android": {
 			"package": "com.lighthousesoftware.festivalofnations2018"
-		}
+    },
+    "infoPlist": {
+      "NSLocationAlwaysUsageDescription": "This app uses the geolocation to show a map of the event locations relative to the users location"
+    }
   }
 }
