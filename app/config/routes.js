@@ -1,4 +1,5 @@
 import { StackNavigator } from 'react-navigation';
+import { StatusBar } from 'react-native';
 
 import Home from '../screens/Home';
 import Schedule from '../screens/Schedule';
@@ -184,7 +185,9 @@ export default StackNavigator(
             screen: ExploreStack,
         },
     },{
+        mode: 'screen',
         headerMode: 'screen',
+        cardStyle: { paddingTop: StatusBar.currentHeight },
     }
 
 );

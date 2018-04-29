@@ -5,16 +5,17 @@
     "slug": "festival-of-nations-mn",
     "icon": "./fon2018logo.png",
     "description": "Festival Of Nations Minnesota 2018",
-		"version": "0.9.0",
+    "version": "0.9.1",
 		"orientation": "portrait",
 		"ios": {
-			"bundleIdentifier": "com.lighthousesoftware.festivalofnations2018"
+      "bundleIdentifier": "com.lighthousesoftware.festivalofnations2018",
+      
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "This app uses the geolocation to show a map of the event locations relative to the users location"
+      }
 		},
 		"android": {
 			"package": "com.lighthousesoftware.festivalofnations2018"
-    },
-    "infoPlist": {
-      "NSLocationAlwaysUsageDescription": "This app uses the geolocation to show a map of the event locations relative to the users location"
     }
   }
 }

@@ -13,7 +13,7 @@ export default EStyleSheet.create({
         paddingLeft:20,
         paddingRight:20,
         paddingTop:10,
-        paddingBottom:10,
+        paddingBottom:10,   
         color: 'white',
         fontSize: 18,
         fontWeight:'bold',

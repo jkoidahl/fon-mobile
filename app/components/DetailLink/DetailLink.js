@@ -14,8 +14,7 @@ class DetailLink extends Component {
         const hasLink = (this.props.url);
 
         const link =  hasLink ? ( 
-             <Text style={styles.link}
-                 onPress={() => Linking.openURL(this.props.url)}>{this.props.text}</Text>) : null;
+             <Text style={styles.link} onPress={() => Linking.openURL(this.props.url)}>{this.props.text}</Text>) : null;
 
         return (
             <View style={styles.container}>{link}</View>

@@ -23,15 +23,18 @@ class HeaderDetailAccordian extends Component {
       _renderContent = (section) => {
         return (
           <View style={styles.content}>
-          <FlatList data={section.contentItems} renderItem={({item}) => 
-            
-            <Text style={styles.contentText}>
-            
-              <Text style={styles.subHeaderText}>{item.header}</Text>
-              <Text>{item.body}</Text>
-              <DetailLink url={item.url} text={item.urlText} />
-            </Text>}/>
-          </View>
+          <FlatList data={section.contentItems} renderItem={
+            ({item}) => 
+            <View>
+             <Text style={styles.contentText}>
+               <Text style={styles.subHeaderText}>{item.header}</Text>
+               <Text>{item.body}</Text>
+             </Text>
+             <DetailLink url={item.url} text={item.urlText}></DetailLink>
+             </View>
+            }
+             keyExtractor={item => item.id} />
+           </View>
         );
       }
 

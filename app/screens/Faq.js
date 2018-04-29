@@ -7,7 +7,7 @@ import { Container } from '../components/Container';
 const SECTIONS = [
     { title: 'Hours',
     contentItems: [ 
-        { header: 'General Public Hours',
+        { id: 4, header: 'General Public Hours',
           body: 
           `
     Friday, May 4, 2018
@@ -17,20 +17,20 @@ const SECTIONS = [
     Sunday, May 6, 2018
       10:00 a.m. – 6:00 p.m.`
       },
-        { header: `Student Hours`, 
+        { id: 5, header: `Student Hours`, 
           body:`
     Thursday, May 3, 2018
       9:00 a.m. – 3:00 p.m.
     Friday, May 4, 2018
       9:30 a.m. – 4:30 p.m.
         
-'STUDENT HOURS ARE NOT OPEN TO THE GENERAL PUBLIC.`
+STUDENT HOURS ARE NOT OPEN TO THE GENERAL PUBLIC`
       }            
     ]
   }, 
     { title: 'Transportation',
       contentItems: [
-          { header: '', 
+          { id: 2, header: '', 
             url: 'http://www.festivalofnations.com/transportation', urlText: 'Free Metro Transit Pass Link',
             body: 'Ride any Metro Transit vehicle to the Saint Paul RiverCentre (175 Kellogg Boulevard West,St. Paul, MN 55102) for FREE! Metro Transit passes will be available for every Festival day (Thursday through Sunday). Hours of operation are one hour before the Festival and FON and one hour after it closes. \n\n'
       }
@@ -38,7 +38,7 @@ const SECTIONS = [
                  
     },
     { title: 'Parking',
-      contentItems: [{ header: '', 
+      contentItems: [{ id: 1, header: '', 
       body: `Ryan Lot - $7.00 for 12 hours (149 total stalls)
   217 Chestnut Street Saint Paul, MN 55102
       
