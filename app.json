@@ -5,7 +5,7 @@
     "slug": "festival-of-nations-mn",
     "icon": "./fon2018logo.png",
     "description": "Festival Of Nations Minnesota 2018",
-    "version": "0.9.2",
+    "version": "0.9.3",
 		"orientation": "portrait",
 		"ios": {
       "bundleIdentifier": "com.lighthousesoftware.festivalofnations2018",
