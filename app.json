@@ -16,7 +16,8 @@
 		},
 		"android": {
       "package": "com.lighthousesoftware.festivalofnations2018",
-      "permissions": []
+      "permissions": [],
+      "versionCode": 2
     }
   }
 }
